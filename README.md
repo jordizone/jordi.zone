@@ -1,1 +1,1 @@
-🧘🏻‍♂️ My personal website powered by Astro.
+My personal website powered by Astro.
