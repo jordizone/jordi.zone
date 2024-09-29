@@ -1,22 +1,75 @@
 ---
+import BackgroundDots from "../components/background-dots.astro";
+import NavLink from "../components/nav-link.astro";
+import Polaroid from "../components/polaroid.astro";
+
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+
+const urls = [
+  {
+    url: "/",
+    title: "Home",
+  },
+  {
+    url: "/blog",
+    title: "Blog",
+  },
+  {
+    url: "/work",
+    title: "Work",
+  },
+  {
+    url: "/projects",
+    title: "Projects",
+  },
+];
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content="Jordi's website" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="https://emojicdn.elk.sh/🥑" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,500;1,500&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <slot />
+  <body class="antialiased bg-gray-50 text-gray-950">
+    <BackgroundDots />
+    <main
+      class="mx-auto flex flex-col mb-14 w-full max-h-screen max-w-screen-sm flex-1 pb-8 pt-20 dark:text-white"
+    >
+      <div class="flex gap-4">
+        <Polaroid />
+        <div class="flex flex-col justify-between">
+          <div>
+            <h1 class="text-gray-800 text-xl font-semibold">
+              Jordi Capellades
+            </h1>
+            <p class="text-gray-700 text-sm">Fronted Developer</p>
+          </div>
+          <nav>
+            <div class="flex gap-4">
+              {urls.map((url) => <NavLink href={url.url}>{url.title}</NavLink>)}
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="mt-4">
+        <slot />
+      </div>
+    </main>
   </body>
 </html>

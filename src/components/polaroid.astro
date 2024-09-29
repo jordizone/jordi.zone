@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import myImage from "../../public/me.jpeg";
+---
+
+<a href="/" title="home">
+  <div
+    class="bg-white shadow-sm w-max p-1.5 sm:p-2 ring-1 ring-gray-200/50 rotate-2 rounded-md"
+  >
+    <Image
+      src={myImage}
+      alt="me"
+      class="w-20 h-20 sm:w-24 sm:h-24 bg-gray-200 rounded-sm"
+    />
+  </div>
+</a>

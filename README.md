@@ -1,1 +1,1 @@
-My personal website powered by Astro.
+The website at (jordi.zone)[https://jordi.zone], powered by Astro.
