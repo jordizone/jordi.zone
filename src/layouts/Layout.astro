@@ -2,6 +2,7 @@
 import BackgroundDots from "../components/background-dots.astro";
 import NavLink from "../components/nav-link.astro";
 import Polaroid from "../components/polaroid.astro";
+import Banner from "../components/banner.astro";
 
 interface Props {
   title: string;
@@ -58,7 +59,7 @@ const urls = [
             <h1 class="text-gray-800 text-xl font-semibold">
               Jordi Capellades
             </h1>
-            <p class="text-gray-700 text-sm">Fronted Developer</p>
+            <p class="text-gray-400 text-sm">Fronted Developer</p>
           </div>
           <nav>
             <div class="flex gap-4">
@@ -68,6 +69,7 @@ const urls = [
         </div>
       </div>
       <div class="mt-4">
+        <Banner />
         <slot />
       </div>
     </main>
