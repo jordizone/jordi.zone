@@ -1,10 +1,45 @@
 ---
+import { ArrowUpRight } from "lucide-astro";
 import Layout from "../layouts/Layout.astro";
+import "@/styles/globals.css";
 ---
 
-<Layout title="Jordi's website">
-  <p class="text-gray-800">
-    Hi! I'm Jordi, a frontend developer and designer. I'm passionate about
-    creating beautiful and functional software.
-  </p>
+<Layout title="Jordi's zone">
+  <main class="max-w-screen-sm mx-auto p-4">
+    <h1 class="font-medium mb-6 text-sm">Jordi Capellades</h1>
+    <div class="w-2/3">
+      <p class="text-neutral-500 text-sm">
+        I am a frontend developer with a passion for creating, exploring, and
+        learning new things. Currently, I work at Ticketdoor as a frontend
+        developer and I have a keen interest in design, <span
+          class="inline-block"
+        >
+          <a href="/photography" class="underline text-brand-orange w-fit flex"
+            >photography <ArrowUpRight size="12" /></a
+          >
+        </span> and music.
+      </p>
+    </div>
+    <div class="mt-6">
+      <ul class="text-sm flex flex-col space-y-2">
+        <li>
+          <a
+            href="https://github.com/jordizone"
+            class="hover:underline hover:text-brand-orange">Github</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://x.com/jordizone"
+            class="hover:underline hover:text-brand-orange">Twitter</a
+          >
+        </li>
+        <li>
+          <a href="#" class="hover:underline hover:text-brand-orange"
+            >LinkedIn</a
+          >
+        </li>
+      </ul>
+    </div>
+  </main>
 </Layout>

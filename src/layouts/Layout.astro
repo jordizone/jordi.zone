@@ -1,9 +1,4 @@
 ---
-import BackgroundDots from "../components/background-dots.astro";
-import NavLink from "../components/nav-link.astro";
-import Polaroid from "../components/polaroid.astro";
-import Banner from "../components/banner.astro";
-
 interface Props {
   title: string;
 }
@@ -28,15 +23,17 @@ const urls = [
     title: "Projects",
   },
 ];
+
+const year = new Date().getFullYear();
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Jordi's website" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="https://emojicdn.elk.sh/🥑" />
+    <link rel="icon" href="https://emojicdn.elk.sh/🍊" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
@@ -47,31 +44,17 @@ const urls = [
       rel="stylesheet"
     />
   </head>
-  <body class="antialiased bg-gray-50 text-gray-950">
-    <BackgroundDots />
-    <main
-      class="mx-auto flex flex-col mb-14 w-full max-h-screen max-w-screen-sm flex-1 pb-8 pt-20 dark:text-white"
-    >
-      <div class="flex gap-4">
-        <Polaroid />
-        <div class="flex flex-col justify-between">
-          <div>
-            <h1 class="text-gray-800 text-xl font-semibold">
-              Jordi Capellades
-            </h1>
-            <p class="text-gray-400 text-sm">Fronted Developer</p>
-          </div>
-          <nav>
-            <div class="flex gap-4">
-              {urls.map((url) => <NavLink href={url.url}>{url.title}</NavLink>)}
-            </div>
-          </nav>
-        </div>
+  <body
+    class="antialiased bg-brand-white text-neutral-900 dark:bg-[#21201D] pt-40 selection:bg-brand-orange/10 selection:text-brand-orange/90"
+  >
+    <header class="max-w-screen-sm mx-auto"></header>
+    <slot />
+    <footer class="fixed bottom-0 w-full">
+      <div class="max-w-screen-sm mx-auto p-4">
+        <p class="text-neutral-500 text-xs">
+          © {year} Jordi. All rights reserved.
+        </p>
       </div>
-      <div class="mt-4">
-        <Banner />
-        <slot />
-      </div>
-    </main>
+    </footer>
   </body>
 </html>
