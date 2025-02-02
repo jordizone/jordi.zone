@@ -1,4 +1,4 @@
-import colors, { orange } from "tailwindcss/colors";
+import colors, { black, orange } from "tailwindcss/colors";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
@@ -16,7 +16,8 @@ export default {
 				gray: colors.stone,
 				brand: {
 					orange: "#EC4F27",
-					white: "D9D2C6"
+					white: "#DCDDD2",
+					black: "#21201D"
 				},
 			},
 			backgroundImage: {

@@ -1,4 +1,5 @@
 ---
+import { TextLoopBasic } from "@/components/text-loop-basic";
 import "@/styles/globals.css";
 
 interface Props {
@@ -30,7 +31,7 @@ const year = new Date().getFullYear();
 ---
 
 <!doctype html>
-<html lang="en" class="">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Jordi's website" />
@@ -47,15 +48,19 @@ const year = new Date().getFullYear();
     />
   </head>
   <body
-    class="antialiased bg-brand-white text-neutral-900 dark:bg-[#21201D] pt-40 selection:bg-brand-orange/10 selection:text-brand-orange/90"
+    class="antialiased bg-brand-white dark:text-brand-white text-neutral-900 dark:bg-brand-black pt-40 selection:bg-brand-orange/10 selection:text-brand-orange/90"
   >
-    <header class="max-w-screen-sm mx-auto"></header>
-    <slot />
+    <header class="max-w-screen-sm mx-auto">
+      <a href="/" class="font-medium hover:underline transition-all"
+        >Jordi Capellades</a
+      >
+    </header>
+    <main class="max-w-screen-sm mx-auto mt-6">
+      <slot />
+    </main>
     <footer class="fixed bottom-0 w-full">
       <div class="max-w-screen-sm mx-auto p-4">
-        <p class="text-neutral-500 text-xs">
-          © {year} Jordi. All rights reserved.
-        </p>
+        <TextLoopBasic client:load />
       </div>
     </footer>
   </body>
